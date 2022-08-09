@@ -9,7 +9,7 @@ library(loo)
 
 ##############################################
 #############Fit incidence data to model
-data <- read.csv("/Users/faithho/hkcase_20210316.csv")
+data <- read.csv("/hkcase_20210316.csv")
 data$classification[1] <- "Local case"
 data <- data[data$classification%in%c("Local case","Epidemiologically linked with local case"),]
 data$onset.day <- as.Date(data$confirm.date,format="%d/%m/%Y") - as.Date(data$onset.date,format="%d/%m/%Y")
@@ -37,14 +37,14 @@ rt.real.data <- list(T=nrow(data4[135:407,]),
                 tau=7)
 
 #Poisson likelihood
-pois.mod <- cmdstan_model("/Users/faithho/poisrt.stan")
+pois.mod <- cmdstan_model("/poisrt.stan")
 pois.rt.fit <- pois.mod$sample(data=rt.real.data,seed=123,chains=1,refresh=500) 
 pois.stanfit <- rstan::read_stan_csv(pois.rt.fit2$output_files())
 pois.rt.ci.l <- summary(pois.stanfit, pars="rt",probs = c(0.025, 0.975))$summary[,4]
 pois.rt.ci.u <- summary(pois.stanfit, pars="rt",probs = c(0.025, 0.975))$summary[,5]
 
 #Negative binomial likelihood
-mod1 <- cmdstan_model("/Users/faithho/negbinrt.stan")
+mod1 <- cmdstan_model("/negbinrt.stan")
 rt.fit <- mod1$sample(data=rt.real.data,seed=123,chains=1,refresh=500,iter_warmup=10000,iter_sampling=10000)
 stanfit <- rstan::read_stan_csv(rt.fit$output_files())
 r.iter <- as.matrix(stanfit,"r")
