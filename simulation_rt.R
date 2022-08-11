@@ -10,13 +10,15 @@ pois.mod <- cmdstan_model("/rt.stan")
 mod1 <- cmdstan_model("/negbinrt.stan")
 cmdstan_path()
 
+#r= dispersion parameter (k); p=probability parameter
+
 rt.data <- list(NA)
 I <- X <- Y <- NA
 w=c(0.000,0.233,0.359,0.198,0.103,0.053,0.027,0.014,0.007,0.003,0.002,0.001)
 T=70
 S=12
 r=rep(2,70) #c(rep(10,18),rep(1,18),rep(0.1,17),rep(2,17)) #0.1, 0.2, 0.5, 1
-p=c(rep(0.625,35),rep(0.625,35)) #c(rep(0.870,18),rep(0.4,18),rep(0.11,17),rep(0.714,17)) #0.45,0.0769(0.1), 0.14(0.2), 0.29(0.5)
+p=c(rep(0.625,35),rep(0.625,35)) #p=r/(Rt+r) #c(rep(0.870,18),rep(0.4,18),rep(0.11,17),rep(0.714,17)) #0.45,0.0769(0.1), 0.14(0.2), 0.29(0.5)
 set.seed(123)
 for (t in 1:5){
   I[t] = 10;
