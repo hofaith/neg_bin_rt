@@ -15,8 +15,8 @@ p80 <- p80.ci.l <- p80.ci.u <- NA
 for (i in 1:10000) {
   for (y in 1:nrow(data4[141:407,])){
     p80.iter[i,y] = propresponsible(
-      rt.iter[i,y], #rt.iter is generated from simulation_rt.R
-      r.iter[i,y], #r.iter is generated from simulation_rt.R
+      rt.iter[i,y], #rt.iter is generated from truedata_rt.R
+      r.iter[i,y], #r.iter is generated from truedata_rt.R
       0.8
     )
   }
