@@ -52,13 +52,13 @@ rect(which(df2$date=="2020-11-16"),0,which(df2$date==max(df2$date)),140,col=alph
 rect(which(df2$date=="2020-07-29"),0,which(df2$date=="2020-09-10"),130,col=alpha("red",0.1),border=F)
 rect(which(df2$date=="2020-12-02"),0,which(df2$date=="2021-02-21"),130,col=alpha("red",0.1),border=F)
 #Closure of bars
-rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-09-17"),120,col=alpha("darkmagenta",0.1),border=F) #Closures of bars and premises selling liquor
-rect(which(df2$date=="2020-12-02"),0,which(df2$date==max(df2$date)),120,col=alpha("darkmagenta",0.1),border=F) #Closures of bars and premises selling liquor
+rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-09-17"),120,col=alpha("darkmagenta",0.1),border=F) 
+rect(which(df2$date=="2020-12-02"),0,which(df2$date==max(df2$date)),120,col=alpha("darkmagenta",0.1),border=F)
 #WFH arrangement
 rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-09-14"),110,col=alpha("royal blue",0.1),border=F)
 rect(which(df2$date=="2020-11-20"),0,which(df2$date=="2021-02-17"),110,col=alpha("royal blue",0.1),border=F)
 #Ban on live performances and dancing activity
-rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-10-29"),100,col=alpha("dark green",0.1),border=F) #Closures of bars and premises selling liquor
+rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-10-29"),100,col=alpha("dark green",0.1),border=F)
 rect(which(df2$date=="2020-11-22"),0,which(df2$date==max(df2$date)),100,col=alpha("dark green",0.1),border=F) 
 text(-17,155,"A",font=2)
 
