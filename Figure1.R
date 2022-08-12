@@ -19,7 +19,7 @@ for (i in 1:length(df2$date)){
 }
 df2$sunday <- ifelse(strftime(df2$date, "%A")=="Sunday",paste(df2$date),NA)
 
-pdf(file="/Users/faithho/Desktop/Figure1_revision.pdf",
+pdf(file="/Figure1_revision.pdf",
     width=12,
     height=8)
 layout(matrix(c(1,2,3,4,5),5,1,byrow=TRUE),heights=c(0.2,rep(2,4)))
@@ -50,7 +50,7 @@ rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-10-29"),140,col=alpha
 rect(which(df2$date=="2020-11-16"),0,which(df2$date==max(df2$date)),140,col=alpha("brown",0.1),border=F) 
 #Ban on group gathering
 rect(which(df2$date=="2020-07-29"),0,which(df2$date=="2020-09-10"),130,col=alpha("red",0.1),border=F)
-rect(which(df2$date=="2020-12-02"),0,which(df2$date=="2021-02-21"),130,col=alpha("red",0.1),border=F)
+rect(which(df2$date=="2020-12-02"),0,which(df2$date=="2021-02-23"),130,col=alpha("red",0.1),border=F)
 #Closure of bars
 rect(which(df2$date=="2020-07-15"),0,which(df2$date=="2020-09-17"),120,col=alpha("darkmagenta",0.1),border=F) 
 rect(which(df2$date=="2020-12-02"),0,which(df2$date==max(df2$date)),120,col=alpha("darkmagenta",0.1),border=F)
