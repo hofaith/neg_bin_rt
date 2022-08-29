@@ -1,5 +1,6 @@
 ##########Figure 1
 library(dplyr)
+library(scales)
 case <- read.csv("/Users/faithho/hkcase_20210301.csv")
 case$confirm.date <- as.Date(case$confirm.date,"%d/%m/%Y")
 case$onset.date <- as.Date(case$onset.date,"%d/%m/%Y")
